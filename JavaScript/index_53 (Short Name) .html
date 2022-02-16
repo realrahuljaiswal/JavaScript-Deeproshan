@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter your full name : <input type="text" id="name" onblur="transform()">
+    <br><br>
+    <span id="msg"></span>
+    <script>
+        function transform(){
+        let name=document.querySelector('#name').value;
+        let words=name.split(" ");
+        var finalName="";
+        for(var x of words){
+            finalName+=x.charAt(0).toUpperCase()+x.substring(1).toLowerCase()+" ";
+        }
+        var msg=document.querySelector('#msg');
+        msg.innerText=finalName;
+        }
+    </script>
+</body>
+</html>

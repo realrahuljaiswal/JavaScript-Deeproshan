@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <script>
+        var p=document.getElementById("p1");
+        var arr=["HTML","CSS","JavaScript","jQuery"];
+        var myColor=["red","green","aqua","yellow"];
+        var res="<ol>";
+        for(var i=arr.length-1;i>=0; i--){
+            res=res+"<li style='background="+myColor[i]+";+ color:"+myColor[i+1]+"; '>"+arr[i]+"</li>";
+        }
+        res+="</ol>";
+        p.innerHTML=res;
+    </script>
+</body>
+</html>

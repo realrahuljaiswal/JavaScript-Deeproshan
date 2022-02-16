@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="demo(10,...arr)"> // Spread Operator
+    <script>
+        const arr = ["Ram", "Shyam", "Mohan", "John"];
+        let demo=(y,...x)=>{ // ...x Rest Parameter
+            document.write(`Number : ${y} <br>`);
+        arr.forEach(function(currElem, index){
+            document.write(`Name is : ${currElem} <br>`);
+        })
+        }
+    </script>
+</body>
+</html>

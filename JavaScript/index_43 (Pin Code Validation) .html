@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+        outline: none;
+    }
+</style>
+<body>
+    <input type="number" name="" id="pincode" onkeyup="demo();" placeholder="Enter your pin code *" required>
+    <span id="msg"></span>
+    <script>
+        function demo(){
+        let pin=document.getElementById('pincode');
+        pincode=pin.value;
+        let msg=document.getElementById('msg');
+        if(pincode.length==6){
+            pin.style.border="2px solid green";
+            msg.innerText="Valid Pin Code";
+            msg.style.color="green";
+        } else{
+            pin.style.border="2px solid red";
+            msg.innerText="Invalid Pin Code";
+            msg.style.color="red";
+        }
+    }
+    </script>
+</body>
+</html>

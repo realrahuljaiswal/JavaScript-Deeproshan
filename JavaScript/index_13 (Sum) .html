@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="field1">
+    <input type="number" name="" id="field2">
+    <input type="number" name="" id="res" readonly>
+    <button onclick="calc();">Calculate</button>
+    <script>
+        function calc(){
+        let a = document.querySelector('#field1');
+        let b = document.querySelector('#field2');
+        let res =  document.querySelector('#res');
+        let val1 = parseInt(a.value);
+        let val2 = parseInt(b.value);
+        let res2 = (val1+val2);
+        res.value=res2;
+        }
+    </script>
+</body>
+</html>

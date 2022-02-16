@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener()</title>
+    <style>
+        button{
+            height: 30px;
+            width: 150px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <button style="background: red;">Button 1</button>
+    <button style="background: blue;">Button 2</button>
+    <button style="background: lime;">Button 3</button>
+    <button style="background:magenta;">Button 4</button>
+
+    <script>
+        let btns=document.querySelectorAll('button');
+        btns[0].addEventListener('click', function(){
+            alert("Hey ! How are you?");
+        })
+        btns[1].addEventListener('dblclick', function(){
+            let msg = prompt("What's your name?");
+            alert("Welcome Mr. "+msg);
+        })
+        btns[2].addEventListener('mousemove', function(){
+            alert("Today is very cold.");
+        })
+        btns[3].addEventListener('keyup', function(){
+            alert("Yes Today's very cold.");
+        })
+    </script>
+</body>
+</html>

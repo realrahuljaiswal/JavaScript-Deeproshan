@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down Validation</title>
+</head>
+<body>
+    <form action="" method="" onsubmit="return demo()">
+    <select name="" id="">
+        <option>---SELECT---</option>
+        <option>Summer Training</option>
+        <option>Winter Training</option>
+        <option>Vocational Training</option>
+    </select>
+    <input type="submit" value="Save">
+    <br>
+    <p></p>
+</form>
+    <script>
+        "use strict";
+        const demo=()=>{
+            var ddl=document.querySelector("select");
+            var err=document.querySelector("p");
+            if(ddl.value=="---SELECT---"){
+                err.textContent="Please Select Any One Option";
+                err.style.color="red";
+                ddl.style.border="2px solid red";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pic Code Onsubmit Validation</title>
+</head>
+<body>
+    <form name="frm" action="" method="" onsubmit="return validate()">
+    <input type="number" name="pin" id="">
+    <span id="msg"></span>
+    <br><br>
+    <input type="submit" value="CHECK">
+    </form>
+    <script>
+        const validate=()=>{
+            let pin=document.forms['frm']['pin'];
+            var msg=document.querySelector('#msg');
+            pincode=pin.value;
+            if(pincode.length!=6){
+                msg.innerHTML="<b>Pincode must be of 6 lengths.</b>";
+                msg.style.color="red";
+                return false;
+            }
+        }
+        
+    </script>
+</body>
+</html>

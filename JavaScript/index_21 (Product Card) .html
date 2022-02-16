@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #navigator{
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <img src="images/bgmi.jpg" alt="" id="hero" height="400px" width="800px">
+        <div id="navigator">
+        <img src="images/Girl2.jpg" alt="" class="child" height="140px" width="160px" onmouseover="demo(this);">
+        <img src="images/KTM - Dream Bike.jpg" alt="" class="child" height="140px" width="160px" onmouseover="demo(this);">
+        <img src="images/sunset.jpg" alt="" class="child" height="140px" width="160px" onmouseover="demo(this);">
+    </div>
+    </div>
+    <script>
+        let  child=document.querySelectorAll('.child');
+        child.addEventListner('onmouseover',demo(ch));
+        function demo(ch){
+            let hero=document.querySelector('#hero');
+            hero.src=ch.src;
+        }
+
+        // function demo(x){
+        //     var im=document.getElementById('hero');
+        //     im.src=x.src;
+        // }
+    </script>
+</body>
+</html>

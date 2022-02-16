@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Validation</title>
+</head>
+<body>
+    <form action="" name="frm" onsubmit="return uploadFile()">
+        <input type="file" name="files" id="files">
+        <span id="msg"></span>
+        <br><br>
+        <input type="submit" value="Upload" name="btn">
+    </form>
+
+    <script>
+        const uploadFile=()=>{
+            let files=document.forms['frm']['files'];
+            var msg=document.querySelector('#msg');
+            fileName=files.value;
+            let arr=fileName.split(".");
+            let ext=arr.pop();
+            // Or, var ext=fileName.substring(fileName.lasIndexOf('.')+1);
+            if(ext!="jpg" && ext!="jpeg" && ext!="png"){
+                msg.innerHTML="Please Select Valid File...!";
+                msg.style.color="red";
+            return false;            
+            }
+
+        }
+    </script>
+</body>
+</html>

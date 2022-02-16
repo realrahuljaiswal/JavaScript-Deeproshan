@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        #digital_clock{
+            height: 250px;
+            width: 400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .box{
+            height: 125px;
+            width: 125px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box span:nth-child(1){
+            height: 100px;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+        }
+
+        .box span:nth-child(2){
+            height: 25px;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            background: red;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="digital_clock">
+        <div class="box">
+            <span id="h">00</span>
+            <span>Hours</span>
+        </div>
+        <div class="box">
+            <span id="m">00</span>
+            <span>Minutes</span>
+        </div>
+        <div class="box">
+            <span id="s">00</span>
+            <span>Seconds</span>
+        </div>
+    </div>
+    <script>
+        function demo(){
+            var h=document.getElementById('h');
+            var m=document.getElementById('m');
+            var s=document.getElementById('s');
+            var dt=new Date();
+            status="AM";
+            var hh=dt.getHours();
+            var mm=dt.getMinutes();
+            var ss=dt.getSeconds();
+            if(hh>12){
+                hh-=12;
+                status="PM";
+            }
+            if(hh<10){
+                hh="0"+hh;
+            }
+            if(mm<10){
+                mm="0"+mm;
+            }
+            if(ss<10){
+                ss="0"+ss;
+            }
+            s.innerText=ss+" " +status;
+            m.innerText=mm;
+            h.innerText=hh;
+        }
+        window.setInterval(demo,1000);
+    </script>
+</body>
+</html>

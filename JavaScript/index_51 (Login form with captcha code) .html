@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #flex{
+            height: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #reload{
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        img{
+            height: 25px;
+            width: 25px;
+            filter: invert(1);
+        }
+
+        #main{
+            min-height: 450px;
+            width: 350px;
+            background: #000;
+            padding: 50px 30px;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        #main h2{
+            font-size: 26px;
+            padding-bottom: 8px;
+            position: relative;
+        }
+
+        #main h2:before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 72px;
+            background: #27CD27;
+            bottom: 0;
+            left: 0;
+        }
+
+        form{
+            min-height: 200px;
+            width: 100%;
+            position: relative;
+            top: 40px;
+        }
+
+        #user, #pass, #captcha{
+            height: 28px;
+            width: 100%;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: #fff;
+            font-size: 15px;
+            border-bottom: 1px solid #27CD27;
+        }
+
+        #captchaVal{
+            background: #fff;
+            padding: 5px;
+            color: #111;
+        }
+
+        #status{
+            margin-left: 10px;
+            font-size: 14px;
+        }
+
+        form button{
+            height: 28px;
+            width: 120px;
+            border-radius: 3px;
+            background: #27CD27;
+            color: #111;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>Login</h2>
+        <form action="" method="">
+            <input type="text" placeholder="Email / Username" id="user">
+            <br><br>
+            <input type="password" placeholder="Password" id="pass">
+            <br><br>
+            <input type="text" placeholder="Enter Captch Code" id="captcha">
+            <br><br>
+            <div id="flex">
+            <s id="captchaVal">34dEEp</s>
+            <span id="reload" onclick="generateCaptcha()"><img src="images/refresh.png" alt=""></span>
+            <span id="msg"></span>
+            </div>
+            <br><br>
+            <button onclick="validation()">LOGIN</button>
+            <br><br>
+            <p style="font-size: 15px;">Don't have an account?<span style="color: #27CD27;"> Sign up</span></p>
+        </form>
+    </div>
+    <script>
+        function generateCaptcha(){
+           var captchaText="0987654321abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+           var captchaCode="";
+           for(let i=0;i<6;i++){
+               var captchaIndex=Math.floor(Math.random()*captchaText.length);
+               captchaCode+=captchaText.charAt(captchaIndex);
+           }
+           document.querySelector('#captchaVal').textContent=captchaCode;
+        }
+        
+
+        function validation(){
+            var username="TPTLKO1432";
+            var password="Techpile@123";
+            var user=document.querySelector('#user').value;
+            var pass=document.querySelector('#pass').value;
+            var captcha=document.querySelector('#captcha').value;
+            var captchaVal=document.querySelector('#captchaVal').textContent;
+            var msg=document.querySelector('#msg');
+            if(captcha==captchaVal){
+                if(username==user && password==pass){
+                    alert("welcome to the dashboard");
+                }else{
+                    alert("Invalid username or password");
+                    msg.innerText="Invalid username or password";
+                    msg.style.color="red";
+                }
+            }else{
+                alert("Invalid captcha");
+                msg.innerText="Invalid captcha";
+                msg.style.color="red";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Destructuring</title>
+</head>
+<body>
+    <script>
+        const obj={
+            name : "Deep",
+            college : "GPL",
+            branch :"IT",
+            age : 21
+        }
+        const{name, college, branch, age}=obj; // Object Destructuring
+        document.write(`My name is ${name}. I studied in ${college} with ${branch} branch. My age is ${age}.`);
+    </script>
+</body>
+</html>

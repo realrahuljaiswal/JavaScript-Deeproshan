@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        const details={
+            name : "Deeproshan Kumar",
+            college : "GPL",
+            msg : function(){
+                // alert("Good Luck Mate ... !")
+                document.write("Good luck mate...!");
+            },
+            msg2 : function(){
+                // alert("Keep Learning... !")
+                document.write("Keep learning..!");
+            },
+            age : 21,
+        };
+        document.write(`Name : ${details.name}<br>`);
+        document.write(`College : ${details.college}<br>`);
+        document.write(`Age : ${details.age}<br>`);
+        details.msg();
+        details.msg2();
+    </script>
+</body>
+</html>

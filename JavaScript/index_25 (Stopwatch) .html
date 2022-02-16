@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        #stopwatch{
+            position: relative;
+            top: -100px;
+            height: 220px;
+            width: 460px;
+            -webkit-box-reflect : below 1px linear-gradient(transparent,#000);
+        }
+
+        .screens{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 150px;
+            width: 100%;
+            background:linear-gradient(rgb(2, 2, 73),#444);
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        .scr{
+            height: 100px;
+            width: 100px;
+            display: grid;
+            place-items: center;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            color: #222;
+        }
+
+        h2{
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 100;
+        }
+
+        #buttons{
+            display: flex;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #buttons button{
+            height: 30px;
+            width: 100px;
+            margin: 0 20px;
+            font-size: 17px;
+            border: none;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="stopwatch">
+        <div class="screens">
+            <div id="h" class="scr">
+                <h2>HH</h2>
+            </div>
+            <div id="m" class="scr">
+                <h2>MM</h2>
+            </div>
+            <div id="s" class="scr">
+                <h2>SS</h2>
+            </div>
+        </div>
+        <div id="buttons">
+            <button onclick="start();" style="background: #27CD27;">Start</button>
+            <button onclick="stop();" style="background: red;">Stop</button>
+        </div>
+    </div>
+    <script>
+        var ss=00;
+        var mm=00;
+        var hh=00;
+        function stopWatch(){
+            var h=document.getElementById('h');
+            var m=document.getElementById('m');
+            var s=document.getElementById('s');
+            ss++;
+            if(ss>=60){
+                ss=0;
+                mm++;
+                if(mm>=60){
+                    mm=0;
+                    hh++;
+                }
+            }
+
+            h.innerText=hh;
+            h.style.fontSize="30px";
+            h.fontFamily="sans-serif";
+            h.fontWeight="bold";
+            m.innerText=mm;
+            m.style.fontSize="30px";
+            m.fontFamily="sans-serif";
+            m.fontWeight="bold";
+            s.innerText=ss;       
+            s.style.fontSize="30px";   
+            s.fontFamily="sans-serif";
+            s.fontWeight="bold";  
+        }
+
+        function start(){
+            a=window.setInterval(stopWatch,1000);
+        }
+
+        function stop(){
+            window.clearInterval(a);
+        }
+    </script>
+</body>
+</html>

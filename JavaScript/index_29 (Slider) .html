@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 400px;
+            width: 900px;
+            border: 10px solid #f40987;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="font-family: sans-serif;">Image Slider</h1>
+        <img src="images/bgmi.jpg" alt="" id="slider">
+    </center>
+    <script>
+        var arrImg=["Girl2.jpg", "KTM - Dream Bike.jpg", "sunset.jpg", "bgmi.jpg"];
+        var i=0;
+        function slides(){
+            var slider=document.querySelector('#slider');
+            slider.src="images/"+arrImg[i];
+            i++;
+            if(i==arrImg.length){
+                i=0;
+            }
+        }
+    window.setInterval(slides,2000);
+    </script>
+</body>
+</html>

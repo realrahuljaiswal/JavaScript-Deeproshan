@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const details = {
+            name : "Deeproshan",
+            age : 21,
+            college : "GPL",
+            branch : "IT",
+            role : "Web Developer",
+            salary : 15000
+        }
+        const ent = Object.entries(details);
+        const val = Object.values(details);
+        for(let [k,v] of ent){
+            document.write(`${k} :::::::::::: ${v} <br>`);
+        }
+    </script>
+</body>
+</html>

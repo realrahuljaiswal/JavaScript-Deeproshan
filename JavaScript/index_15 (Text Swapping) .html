@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval()</title>
+    <style>
+        #box,#box2,#res{
+            height: 200px;
+            width: 200px;
+            background: aqua;
+            display: flex;
+            margin: 10px;
+            float: left;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        #box2{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">Deeproshan Kumar</div>
+    <div id="box2">Sonu</div>
+    <div id="res">C</div>
+    <button onclick="demo();">SWAP</button>
+    <script>
+    function demo(){
+    var b1=document.getElementById('box');
+    var b2=document.getElementById('box2');
+    var res=document.getElementById('res');
+    var txt1=b1.innerText;
+    var txt2=b2.innerText;
+    var txt3=res.innerText;
+    b1.innerText=txt2;
+    b2.innerText=txt3;
+    res.innerText=txt1;
+    }   
+    window.setInterval(demo,3000);
+</script>
+</body>
+</html>

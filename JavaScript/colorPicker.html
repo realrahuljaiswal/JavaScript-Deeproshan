@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        div{
+            height: 250px;
+            width: 280px;
+            background: transparent;
+            color: #fff;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 20px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            margin: 20px;
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body onload="colorCodeGenerator();">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    function colorCodeGenerator(){
+        const colorCode="0123456789abcdef";
+        var color1="#";
+        var color2="#";
+        var color3="#";
+        var color4="#";
+        var color5="#";
+        for(let i=0;i<6;i++){
+            var randomIndex1=Math.floor(Math.random()*colorCode.length);
+            var randomIndex2=Math.floor(Math.random()*colorCode.length);
+            var randomIndex3=Math.floor(Math.random()*colorCode.length);
+            var randomIndex4=Math.floor(Math.random()*colorCode.length);
+            var randomIndex5=Math.floor(Math.random()*colorCode.length);
+            color1+=colorCode.charAt(randomIndex1);
+            color2+=colorCode.charAt(randomIndex2);
+            color3+=colorCode.charAt(randomIndex3);
+            color4+=colorCode.charAt(randomIndex4);
+            color5+=colorCode.charAt(randomIndex5);
+        }
+        document.querySelectorAll("div")[0].style.background=color1;
+        document.querySelectorAll("div")[0].textContent=color1;
+
+        document.querySelectorAll("div")[1].style.background=color2;
+        document.querySelectorAll("div")[1].textContent=color2;
+
+        document.querySelectorAll("div")[2].style.background=color3;
+        document.querySelectorAll("div")[2].textContent=color3;
+
+        document.querySelectorAll("div")[3].style.background=color4;
+        document.querySelectorAll("div")[3].textContent=color4;
+
+        document.querySelectorAll("div")[4].style.background=color5;
+        document.querySelectorAll("div")[4].textContent=color5;
+    }
+    window.setInterval(colorCodeGenerator,5000);
+</script>
+</html>

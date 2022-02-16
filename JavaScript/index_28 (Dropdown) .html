@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Choose any programming language:
+        <select class="lang" name="lang">
+          <option value="">Select One …</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+      </label>
+      
+      <div class="result"></div>
+<script>
+      const selectElement = document.querySelector('.lang');
+      selectElement.addEventListener('change', (e) => {
+      const result = document.querySelector('.result');
+      result.textContent = `You have chosen : ${e.target.value}`;
+});
+</script>
+</body>
+</html>

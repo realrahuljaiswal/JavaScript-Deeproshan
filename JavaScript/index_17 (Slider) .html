@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/bgmi.jpg" height="200px" alt="" id="im1">
+    <img src="images/Girl2.jpg" height="200px" alt="" id="im2">
+    <img src="images/KTM - Dream Bike.jpg" height="200px" alt="" id="im3">
+    <img src="images/sunset.jpg" height="200px" alt="" id="im4">
+    <button onclick="magic();">Change Images</button>
+    <script>
+        function magic(){
+            var a=document.getElementById('im1');
+            var b=document.getElementById('im2');
+            var c=document.getElementById('im3');
+            var d=document.getElementById('im4');
+            var path1=a.src;
+            var path2=b.src;
+            var path3=c.src;
+            var path4=d.src;
+            a.src=path2;
+            b.src=path3;
+            c.src=path4;
+            d.src=path1;
+        }
+        window.setInterval(magic,1000);
+    </script>
+</body>
+</html>

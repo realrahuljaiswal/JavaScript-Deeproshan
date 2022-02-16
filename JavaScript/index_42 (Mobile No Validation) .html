@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="mobno" onkeyup="demo();">
+    <button>Check</button>
+    <script>
+        function demo(){
+        let mn=document.getElementById('mobno');
+        mobno=mn.value;
+        let msg=document.getElementById('msg');
+        let btn=document.querySelector('button');
+        if((mobno.charAt(0)=='6' || mobno.charAt(0)=='7'  || mobno.charAt(0)=='8'  || mobno.charAt(0)=='9') && mobno.length==10){
+            mn.style.border="2px solid green";
+            btn.innerText="Valid";
+            btn.style.background="green";
+            btn.style.color="white";
+            btn.style.border="1px solid green";
+        } else{
+            mn.style.border="2px solid red";
+            btn.innerText="Inalid";
+            btn.style.background="red";
+            btn.style.color="white";
+            btn.style.border="1px solid red";
+        }
+    }
+    </script>
+</body>
+</html>

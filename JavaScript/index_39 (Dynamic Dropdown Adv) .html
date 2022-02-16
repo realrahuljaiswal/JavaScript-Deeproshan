@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1" ></p>
+    <input type="text" id="t">
+    <script>
+        var courseList=["Summer Training", "Vocational Training", "Winter Training", "ApprenticeShip"];
+        var p1=document.getElementById('p1');
+        var t=document.getElementById('t');
+        var res="<select onchange='demo(this)''>";
+        courseList.forEach(function(currElem){
+            res=res+"<option>"+currElem+"</option>";
+        });
+        res+="</select>";
+         p1.innerHTML=res;
+        function demo(y){
+           if(y.value=="Summer Training"){
+            t.value="6500";
+           }
+           if(y.value=="Vocational Training"){
+            t.value="7500";
+           }
+           if(y.value=="Winter Training"){
+            t.value="4000";
+           }
+           if(y.value=="ApprenticeShip"){
+            t.value="18000";
+           }
+
+        }
+    </script>
+</body>
+</html>

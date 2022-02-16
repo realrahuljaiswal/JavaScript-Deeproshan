@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100%;
+        }
+
+        div{
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            line-height: 80px;
+            background: aqua;
+            float: left;
+            border: 5px solid orange;
+            margin: 20px;
+        }
+
+        .a{
+            transform: rotate(45deg);
+            background: rgb(221, 25, 74);
+            color: #fff;
+            transition:.7s ease;
+        }
+
+        .b{
+            transform: rotate(-45deg);
+            background: #27CD27;
+            color: #fff;
+            transition:.7s ease;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <br><br><br>
+    <button onclick="add();">ADD</button>
+    <button onclick="remove();">REMOVE</button>
+    <button onclick="toggle();">TOGGLE</button>
+    <button onclick="contains();">CONTAINS</button>
+    <script>
+        function add(){
+            let box1=document.querySelector('#box1').classList.add('a');
+            let box2=document.querySelector('#box2').classList.add('b');
+        }
+
+        function remove(){
+            let box1=document.querySelector('#box1').classList.remove('a');
+            let box2=document.querySelector('#box2').classList.remove('b');
+        }
+
+        function toggle(){
+            let box1=document.querySelector('#box1').classList.toggle('a');
+            let box2=document.querySelector('#box2').classList.toggle('b');
+        }
+
+        function contains(){
+            var a=document.querySelector('#box1').classList.contains('a');
+            alert(a);
+        }
+    </script>
+</body>
+</html>

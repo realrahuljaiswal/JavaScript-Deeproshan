@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>JQUERY</li>
+        <li>BOOTSTRAP</li>
+    </ul> -->
+    <select name="" id="">
+        <option value="">---SELECT TRAINING---</option>
+        <option value="">SUMMER TRAINING</option>
+        <option value="">WINTER TRAINING</option>
+        <option value="">APPRENTICESHIP</option>
+        <option value="">VOCATIONAL TRAINING</option>
+    </select>
+    <button onclick="ddl();">SET BACKGROUND</button>
+
+    <script>
+        function ddl(){
+        var color=["red", "green", "blue", "orange","pink"];
+        var op=document.querySelectorAll('option');
+        for(var i=0; i<op.length; i++){
+            op[i].style.background=color[i];
+        }
+    }
+    </script>
+</body>
+</html>

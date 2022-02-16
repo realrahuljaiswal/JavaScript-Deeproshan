@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function (ES6)</title>
+</head>
+<body>
+    <input type="text" onkeyup="demo2(this)">
+    <p></p>
+    <button onclick="demo()">Click Me</button>
+    <script>
+        var demo=()=>{
+            alert("Good Luck Mate...");
+        }
+        var demo2=(name)=>{
+            var v=name.value;
+            document.querySelector('p').innerText=v;
+        }
+    </script>
+</body>
+</html>

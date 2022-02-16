@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        center{
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+            margin: 30px;
+        }
+
+        .grid{
+            height: 500px;
+            width: 900px;
+            display: grid;
+            grid-template-rows: repeat(2,1fr);
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 20px !important;
+        }
+
+        .box{
+            position: relative;
+            overflow: hidden;
+            height: auto;
+            width: 280px;
+            object-fit: cover;
+            background: red;
+        }
+        
+        .box img{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #background{
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #modal{
+            position: relative;
+            min-height: 500px;
+            min-width: 650px;
+            background: #fff;
+            box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        }
+
+        #modal img{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #close{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <center>Image Gallery</center>
+    <main class="grid">
+        <div class="box">
+            <img src="images/bgmi.jpg" alt="" onclick="demo(this);">
+        </div>
+        <div class="box">
+            <img src="images/Girl2.jpg" alt="" onclick="demo(this);">
+        </div>
+        <div class="box">
+            <img src="images/KTM - Dream Bike.jpg" alt="" onclick="demo(this);">
+        </div>
+        <div class="box">
+            <img src="images/sunset.jpg" alt="" onclick="demo(this);">
+        </div>
+        <div class="box">
+            <img src="images/Girl2.jpg" alt="" onclick="demo(this);">
+        </div>
+        <div class="box">
+            <img src="images/bgmi.jpg" alt="" onclick="demo(this);">
+        </div>
+    </main>
+    <div id="background">
+        <div id="modal" class="foreground">
+            <div id="close" onclick="closeModal();">X</div>
+            <img src="images/bgmi.jpg" id="modalImg" alt="">
+        </div>
+    </div>
+    <script>
+        function demo(x){
+            var bg = document.getElementById('background');
+            var mimg = document.getElementById('modalImg');
+            bg.style.display="block";
+            mimg.src=x.src;
+        }
+
+        function closeModal(){
+            var bg = document.getElementById('background');
+            bg.style.display="none";
+        }
+    </script>
+</body>
+</html>

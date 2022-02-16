@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="Images/bgmi.jpg" height="300px" alt="" id="img">
+    <button onclick="getAttr();">GET ATTR</button>
+    <button onclick="setAttr();">SET ATTR</button>
+    <script>
+        function getAttr(){
+        var img=document.querySelector('#img');
+        alert(img.getAttribute('src'));
+        }
+
+        function setAttr(){
+        var img2=document.querySelector('#img');
+        img2.setAttribute('src','images/Girl2.jpg');
+        }
+    </script>
+</body>
+</html>

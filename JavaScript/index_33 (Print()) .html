@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Printing</title>
+</head>
+<body>
+    <div id="box">
+        <h2>Heading 2</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam hic nobis assumenda voluptate recusandae tempore soluta error a libero ad rem sed, esse aspernatur quos ea tenetur? Dolorem aspernatur qui sapiente, dicta, maxime inventore rem iusto modi dolorum nostrum error quasi eum quae excepturi odio voluptatem aliquam tempore molestias ut, laboriosam reiciendis eligendi delectus. Maxime dicta provident ea sit doloremque. Error saepe consectetur necessitatibus inventore accusamus tempore nam minima accusantium rem nobis voluptatibus ab, unde vitae magnam dicta at? Quod eligendi voluptate natus! Repudiandae quae ipsam pariatur, veniam reprehenderit, necessitatibus nulla dolorum voluptate vero nihil dicta perferendis, in incidunt? At fuga temporibus fugiat dolorem cupiditate excepturi debitis. Magnam, libero necessitatibus in consequatur explicabo delectus provident quis quo temporibus soluta iure fugit a suscipit eius non aspernatur. Veritatis, aspernatur ad dolore facere veniam porro incidunt, est doloribus illum amet sequi a corporis saepe quia natus nihil maiores fugit magni deserunt tempore! Recusandae neque voluptatibus exercitationem facilis quidem tempora deleniti velit sed voluptas aut autem quaerat magnam, dicta maxime? Et id repellendus vel. Neque, itaque facilis rerum inventore expedita dolorum, similique eos qui vel placeat, fugiat ipsum modi iusto tempore dolore impedit illum possimus laboriosam amet reiciendis. Pariatur eos voluptatibus reiciendis enim.</p>
+    </div>
+    <button onclick="demo();">Print</button>
+    <script>
+        function demo(){
+        var content=document.getElementById('box').innerHTML;
+        document.body.innerHTML=content;
+        window.print();
+        }
+    </script>
+</body>
+</html>

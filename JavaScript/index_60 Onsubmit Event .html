@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onsubmit</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #552d8a;
+            color: #fff;
+        }
+
+        *{
+            font-family: sans-serif;
+        }
+
+        form{
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            width: 250px;
+            box-shadow:  20px 20px 60px #4c2199,
+             -20px -20px 60px #662dcf;
+        }
+
+        input{
+            padding: 7px 5px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+            outline: none;
+            border: 1px solid rgba(255,255,255,0.09);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 100%;
+        }
+
+        ::placeholder{
+            color: #333;
+        }
+
+        input[type="submit"]{
+            background: #1072d3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="" onsubmit="return validation()" name="frm">
+    <h2>Password Validation</h2>
+    <input type="password" name="pass" id="pass" placeholder="Enter Your Password">
+     <br><br>
+    <input type="password" name="cpass" id="cpass" placeholder="Re-Type Your Password">
+    <br><br>
+    <span id="msg"></span>
+    <br><br>
+    <input type="submit" value="CHECK">
+    </form>
+    <script>
+        const validation=()=>{
+            let pass=document.forms['frm']['pass'];
+            password=pass.value;
+
+            let cpass=document.forms['frm']['cpass'];
+            confirmPassword=cpass.value;
+
+            let msg=document.querySelector('#msg');
+
+            
+            if(password!=confirmPassword){
+                pass.style.border="1px solid red";
+                cpass.style.border="1px solid red";
+                msg.innerHTML="Password and Confirm Password Didn't Matched...!";
+                msg.style.color="red";
+                return false;
+            }
+            else if(password=='' && confirmPassword==''){
+                msg.innerHTML="Both Fields are Required...!";
+                msg.style.color="yellow";
+                return false;
+            }
+            else if((!isNaN(password)) && (!isNaN(confirmPassword))){
+                msg.innerHTML="Only Numbers Can't Be Consider as Password...!";
+                msg.style.color="yellow";
+                return false;
+            }
+            else if(password.length<=2 && confirmPassword.length<=2){
+                msg.innerHTML="Password Length Must Be 3 or Greater than 3...!";
+                msg.style.color="yellow";
+                return false;
+            }
+            else{
+                pass.style.border="1px solid skyblue";
+                cpass.style.border="1px solid skyblue";
+                msg.innerHTML="Correct Password...!";
+                msg.style.color="skyblue";
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of Objects</title>
+</head>
+<body>
+    <p></p>
+    <button onclick="func();">CLICK ME</button>
+    <script>
+        const func=()=>{
+        const studentInfo=[
+            {
+                name : 'Deeproshan Kumar',
+                collegeName : 'GPL',
+                branch : 'IT',
+                age : 21
+            },
+            {
+                name : 'Sandeep Kumar',
+                collegeName : 'MIC',
+                branch : 'CSE',
+                age : 17
+            },
+            {
+                name : 'Ajit Yadav',
+                collegeName : 'CCA',
+                branch : 'CSE',
+                age : 20
+            },
+            {
+                name : 'Ayushi Yadav',
+                collegeName : 'GGPG',
+                branch : 'CS',
+                age : 21
+            },
+            {
+                name : 'Ishika Jaiswal',
+                collegeName : 'GGPL',
+                branch : 'IT',
+                age : 21
+            }
+        ]
+        let tableInfo="<table border='1' cellpadding='10px'><tr><th>Name</th><th>College Name</th><th>Branch</th><th>Age</th></tr>";
+        let dropDown="<select><option>---Select---</option>";
+        let orderList="<ol>";
+        let unorderList="<ul>";
+        for(let x of studentInfo){
+            tableInfo+="<tr><td>"+x.name+"</td><td>"+x.collegeName+"</td><td>"+x.branch+"</td><td>"+x.age+"</td></tr>";
+            dropDown+="<option"+x.name+"</option>";
+            orderList+="<li>"+x.collegeName+"</li>";
+            unorderList+="<li>"+x.branch+"</li>";
+        }
+        tableInfo+="</table>";
+        dropDown+="</select>";
+        orderList+="</ol>";
+        unorderList+="</ul>";
+        document.querySelector('p').innerHTML=tableInfo+dropDown+orderList+unorderList;
+        }
+    </script>
+</body>
+</html>

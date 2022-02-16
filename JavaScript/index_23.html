@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            font-family: sans-serif;
+        }
+        #modal{
+            height: 200px;
+            width: 700px;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(0,0,255,0.2);
+            display: flex;
+            padding: 20px;
+        }
+        .imgBx{
+            height: 140px;
+            width: 200px;
+            max-width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            object-fit: cover;
+        }
+        .content{
+            display: flex;
+            padding: 0 20px;
+            flex-direction: column;
+        }
+        button{
+            display: block;
+            margin-top: 20px;
+            height: 26px;
+            border: none;
+            outline: none;
+            width: 120px;
+            background: #111;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="modal">
+        <div class="imgBx">
+            <img src="images/bgmi.jpg" alt="">
+        </div>
+        <div class="content">
+            <h3>BGMI Official !</h3>
+            <p>Please play with moderation take proper leave when you play it.</p>
+            <button>Close</button>
+        </div>
+    </div>
+    <script>
+        let modal = document.querySelector('#modal');
+    </script>
+</body>
+</html>

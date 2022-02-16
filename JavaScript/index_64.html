@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation - Radio Button</title>
+</head>
+<body>
+    <form action="" method="GET" onsubmit="return validate()" name="frm">
+        <p>Kindly Select Your Traning -</p>
+        Summer Training : <input type="radio" name="r" id="">
+        Winter Training : <input type="radio" name="r" id="">
+        Vocational Training : <input type="radio" name="r" id="">
+        Apprenticeship : <input type="radio" name="r" id="">
+        <input type="submit" value="Save">
+        <br>
+        <b></b>
+    </form>
+    <script>
+        "use strict"
+        const validate=()=>{
+            var radio = document.querySelectorAll('input[type="radio"]');
+            var count=0;
+            for(var x of radio)
+            {
+                if(x.checked==true){
+                    count++;
+                    return true;
+                }
+            }
+            if(count==0){
+                document.querySelector('b').innerHTML="Please select at least one option.";
+                document.querySelector('b').style.color="red";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

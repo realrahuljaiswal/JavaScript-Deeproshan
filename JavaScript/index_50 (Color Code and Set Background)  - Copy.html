@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Colors</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        #background{
+            height: 480px;
+            width: 420px;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0,0,0,.3);
+        }
+
+        #colorBg{
+            height: 300px;
+            margin: 30px 0;
+            width: 100%;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            background: rgba(0,0,0,.3);
+        }
+
+        #colorValue{
+            height: 35px;
+            width: 100%;
+            background-color: rgba(255,255,255,0.5);
+            color: #111;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            padding: 10px;
+            border: none;
+        }
+
+        #btn{
+            height: 35px;
+            width: 100%;
+            background-color: tomato;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="generate();">
+    <div id="background">
+        <div id="colorBg"></div>
+        <input type="text" name="" id="colorValue" readonly onclick="copy();">
+        <br>
+        <button id="btn" onclick="setColor();">Set Color</button>
+    </div>
+    <script>
+        function generate(){
+            const colorCode="0123456789abcdef";
+            var color="#";
+            for(let i=0;i<6;i++){
+                var randomIndex=Math.floor(Math.random()*colorCode.length);
+                color+=colorCode.charAt(randomIndex);
+            }
+            document.querySelector("#colorBg").style.background=color;
+            let colorValue=document.querySelector('#colorValue');
+            colorValue.value=color;            
+        }
+
+        function setColor(){
+            let colorValue=document.querySelector('#colorValue').value;
+            let background=document.querySelector('#background');
+            background.style.background=colorValue; 
+        }
+
+        function copy() {
+            var copyText = document.getElementById("colorValue");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+</body>
+</html>
